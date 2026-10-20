@@ -1,0 +1,29 @@
+# Illustrative only; not captured application logs
+10:20:45 API op=web-op-01 device=web
+          type=REMOVE symbol=VNM
+          baseVersion=17 currentVersion=17
+          result=APPLIED newVersion=18
+
+10:22:03 API op=web-op-02 device=web
+          type=REMOVE symbol=FPT
+          baseVersion=18 currentVersion=18
+          result=APPLIED newVersion=19
+
+10:23:11 API op=web-op-03 device=web
+          type=MOVE symbol=MWG afterSymbol=null
+          baseVersion=19 currentVersion=19
+          result=APPLIED newVersion=20
+
+10:41:02 API device=mobile baseVersion=17
+          currentVersion=20 staleClient=true
+
+10:41:02 API op=mobile-op-01 type=ADD symbol=HPG
+          result=APPLIED newVersion=21
+10:41:02 API op=mobile-op-02 type=ADD symbol=SSI
+          result=APPLIED newVersion=22
+10:41:02 API op=mobile-op-03 type=ADD symbol=VCI
+          result=APPLIED newVersion=23
+
+10:41:02 API device=mobile
+          result=RECONCILED currentVersion=23
+          removedSymbols=[VNM,FPT] orderPreserved=true
